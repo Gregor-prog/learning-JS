@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class constrctor</title>
+</head>
+<body>
+    
+    <script>
+
+        // constrctor = a special method of class
+        //              accepts arguments and assign properties
+
+        //example:
+
+        class Student{
+            //you can assign any argument to the constructor
+            constructor(name, age, gpa){
+                this.name = name;
+                this.age = age;
+                this.gpa = gpa;
+            }
+            read(){
+                `${this.name} is reading`
+            }
+        }
+        //you can use this class as templates for other objects
+
+        let student1 = new Student("Patrick", 18, 3.7)
+        student2 = new Student("Spongebob", 15, 3.62)
+        console.log(student1.name)
+        console.log(student2.name) 
+        // you cabn use the class to create as many students as we like
+        
+        
+        
+        </script>
+</body>
+</html>

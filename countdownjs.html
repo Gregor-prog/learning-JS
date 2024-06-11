@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown to something</title>
+</head>
+<body>
+    
+
+    <div id="container">
+    <div style="margin: 10px;">    <label for="Value" id="value1"> Value you wanna count down from?:</label>
+    <input id="value" type="number"> </div>
+  <div>  <label for="lastText" id="value2"> Display after countdown?</label>
+    <input id="lastText" type="text"></div>
+
+        <h1 id="variabletext"></h1>
+
+        <button id="startbutton">Start</button>
+    </div>
+   
+    <style>
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to top right, rgb(57, 224, 57),rgb(221, 79, 79));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+     #container{
+       height: 500px;
+       width: 800px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       box-shadow: 1px 1px 9px 1px;
+       border-radius: 12px;     
+       
+   }
+   #variabletext{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    
+    height:100px;
+
+    
+   }
+   #startbutton{
+    border: none;
+    box-shadow: 0px 0px 17px 9px;
+    background-image: linear-gradient(to top right, rgb(57, 224, 57),rgb(221, 79, 79));
+    border-radius: 12px;
+    width: 100px;
+    height: 50px;
+   }
+   label{
+color: rgb(217, 226, 240);
+font-size: 20px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+margin: 5px;
+   }
+   input{
+    width: 200px;
+    height: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 2px 2px;
+    background-color: aliceblue;
+   }
+    </style>
+    
+    <script>
+        let value;
+        let finalText;
+        function declare(){
+             value = document.getElementById("value").value
+          value = Number(value) + 1
+         finalText = document.getElementById("lastText").value
+        }
+         let timer;
+         document.getElementById("startbutton").onclick = function()
+         {
+            declare()
+            timer = setInterval(countDown, 1500)
+           
+         }
+
+         function countDown(){
+            
+          value -= 1
+          document.getElementById("variabletext").innerHTML = value;
+
+          if(value == 0){
+           document.getElementById("variabletext").innerHTML = finalText;
+          }
+          if(value == 0){
+            clearInterval(timer)
+          }
+         }
+    </script>
+</body>
+</html>

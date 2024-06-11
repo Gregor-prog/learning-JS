@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, paper, Scissors game</title>
+</head>
+<body>
+    
+    
+    <div id="container">
+        <h2>Rock Paper Scissors</h2>
+        <p id="me"> Me - </p>
+        <p id="computer">Computer - </p>
+        <p id="display">Result - </p>
+         
+        <div id="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+
+    </div>
+
+
+
+    <style>
+        body{
+            background-image: linear-gradient(to bottom left, antiquewhite, rgb(222, 224, 78));
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+             height: 300px;
+             width: 500px;
+             background-color: rgba(245, 245, 220, 0.363);
+             display: flex;
+             flex-direction: column;
+             justify-content: space-evenly;
+             align-items: center;
+             border-radius: 24px;
+             box-shadow: 0px 0px 50px rgb(241, 241, 241);
+             padding: 10px;
+        }
+        h2{
+            font-family: cursive;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            height: 50px;
+        }
+        #me{
+            margin: 5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            width: 200px;
+            font-weight: bold;
+            font-style: italic;
+            color: orangered;
+        }
+        #computer{
+            margin: 5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            width: 200px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgb(150, 8, 179);
+        }
+        #display{
+            margin: 5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            width: 200px;
+            font-weight: bold;
+            font-style: italic;
+            color:orangered;
+        }
+
+        button{
+            width: 110px;
+            height: 30px;
+        }
+    </style>
+
+    <script>
+        let options = ["rock", "paper", "scissors"]
+        let rock = document.querySelector("#rock");
+        let paper = document.querySelector("#paper");
+        let scissors = document.querySelector("#scissors");
+        let metext = document.getElementById("me");
+        let computertext = document.getElementById("computer");
+        let result = document.getElementById("display")
+        let computer;
+        let me;
+          let arrayValue = 0;
+        rock.addEventListener("click", () => {
+            arrayValue = Math.floor(Math.random() * 3) 
+            computer = options[arrayValue]
+            me = options[0]
+            metext.textContent = "Me - " + me
+            computertext.textContent = "Computer - " + computer
+
+             if(computer == options[0] ){
+             result.textContent = "Result - Draw"
+             }
+             else if(computer == options[1]){
+                result.textContent = "Result - You loose! Try again" 
+             }
+             else if(computer == options[2]){
+                result.textContent = "Result - You Won, congrats" 
+             }
+             else{}
+            
+        })
+
+        paper.addEventListener("click", () => {
+            arrayValue = Math.floor(Math.random() * 3) 
+            computer = options[arrayValue]
+            me = options[1]
+            metext.textContent = "Me - " + me
+            computertext.textContent = "Computer - " + computer
+
+             if(computer == options[0] ){
+             result.textContent = "Result - You Won! congrats!"
+             }
+             else if(computer == options[1]){
+                result.textContent = "Result - Draw" 
+             }
+             else if(computer == options[2]){
+                result.textContent = "Result - You loose, Try again" 
+             }
+             else{}
+
+             scissors.addEventListener("click", () => {
+            arrayValue = Math.floor(Math.random() * 3) 
+            computer = options[arrayValue]
+            me = options[2]
+            metext.textContent = "Me - " + me
+            computertext.textContent = "Computer - " + computer
+
+             if(computer == options[0] ){
+             result.textContent = "Result - You loose! Try again"
+             }
+             else if(computer == options[1]){
+                result.textContent = "Result - You Won, congrats" 
+             }
+             else if(computer == options[2]){
+                result.textContent = "Result - Draw" 
+             }
+             else{}
+            
+        })
+            
+        })
+    </script>
+</body>
+</html>

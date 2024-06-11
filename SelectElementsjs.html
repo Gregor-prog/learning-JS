@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting Elements in a web page</title>
+</head>
+<body>
+    
+<h1 id="header"> This is the Menu</h1>
+<input type="radio" name="fruits" value="Apple" >
+<label for="Apple">Apple</label><br>
+<input type="radio" name="fruits" value="Paw-Paw" >
+<label for="Paw-Paw">Paw-Paw</label><br>
+<input type="radio" name="fruits" value="watermelon" checked="checked" >
+<label for="watermelon">watermelon</label>
+
+<ul>
+    <li>Abimbola</li>
+    <li>sodiq</li>
+    <li>Babanla</li>
+</ul>
+
+<div class="House">Bungalow</div>
+<div class="House">Mansion</div>
+<div class="House">room and palour</div>
+<div class="House">Normal house</div>
+
+<input type="text" id="text" >
+<button id="myBut">click me</button>
+<p id="okay"></p>
+<script>
+//  topic:  different ways of selecting Elements in a web page
+// we wannna change the background color of the header tag
+// first access it with the "document" element
+  let element = document.getElementById("header")
+  // we can chabge the style by using the style 
+  // then type the style we wanna change
+  // note: don't forget to put the styling in apostrophes
+  element.style.backgroundColor = "yellow"
+  // Let's selelct Element by their name
+  // it is useful if you have more than one element in a kindof group
+   let tags = document.getElementsByName("fruits");
+
+   tags.forEach(
+    (fruit) => {
+        
+        if(fruit.checked){
+            console.log(fruit.value);
+        }
+
+    }
+   )
+   //we can also select elements by tag names, e.g;
+    let Names = document.getElementsByTagName("li")
+    
+    Names[2].style.backgroundColor = "grey"
+
+    // let's do get elements by class name
+ let houses = document.getElementsByClassName("House")
+ //houses[1].style.backgroundColor = "blue";
+ //to convert from a collection to an Array, you use the Array.from(collection)
+  houses = Array.from(houses)
+    houses.forEach(
+        (house) => { house.style.backgroundColor = "lightgreen"}
+    )
+
+ // query selector
+ // we can select elemnt either by an id, a class name, a tag or an attribute
+ // in query selector, always make what you are tagging known, example;
+ // preceed id with "#", preceed class name with "."
+
+ document.querySelector("#okay").innerHTML = "okay";
+
+ let Housey = document.querySelectorAll(".House");
+ // a query selector just selects he fist elements in a group
+ // the query  selector All , allow you the lists or group to behave like an array
+ 
+//   Housey.forEach(
+//     (house) => {house.style.backgroundColor = "green"}
+//   )
+
+
+    </script>
+</body>
+</html>

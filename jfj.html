@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click me if you can</title>
+</head>
+<body>
+    <div id="element">Catch me if you can</div>
+
+    <script>
+      let  element =  document.querySelector("#element");
+      element.style.height = "100px"
+      element.style.width = "100px"
+      element.style.backgroundColor = "lightgreen";
+      element.style.textAlign = "center"
+      element.style.border = "5px solid yellow"
+      element.style.padding = "5px"
+      element.style.margin = "auto"
+      element.style.display = "block"
+
+      let count = ["200", "215", "220", "225", "230"]
+
+     element.addEventListener("mouseover", moveElement)
+      consoleddlog(22);
+      element.style.width;
+      let shit = 0;
+      function moveElement(){
+
+           shit+=1
+           element.style.width = count[shit]
+           
+           
+      }
+      
+    </script>
+</body>
+</html>

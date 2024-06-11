@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation with javascript</title>
+</head>
+<body>
+    <style>
+        #div{
+            background-color: chartreuse;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+     <button>Start Animation</button>
+    <div id="div"></div>
+   
+
+    <script>
+      let div = document.querySelector("#div")
+      let button = document.querySelector("button");
+      button.addEventListener("click", ok)
+      function ok(){
+        let x = 0;
+        let y = 0;
+        let j;
+        let deg;
+       j  =  setInterval(
+            () => {
+              x += 5;
+              y += 5;
+             
+              div.style.top = y + "px"
+              div.style.left = x + "px"
+              
+              if(x == 200 && y == 200){
+            clearInterval(j)
+        }
+     
+            }, 100
+            
+        )
+       
+      }
+    </script>
+</body>
+</html>

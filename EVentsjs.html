@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #Mysh{
+             background-color: aquamarine;
+             height: 200px;
+             width: 100px;
+        }
+    </style>
+    <button id="button" > CLick me</button><br>
+    <input type="text" id="textb">
+    <div id="Mysh" ></div>
+
+    <script>
+        // Events = An Event is some action that the use or browser does.
+        let click =  document.getElementById("button");
+        click.onclick = () => window.alert("You did something")
+        // these are event attribtes, onclick, onload......
+        // there is also "onload", it does something when the browser loads
+       // document.body.onload = () => window.alert("You just loaded something")
+        // onchange, this attribute is activated when an element has been changed.
+        document.getElementById("textb").onchange = () => window.alert("something just changed")
+
+        // onmouseover, this executes a function when the mouse is over an HTML element
+        document.getElementById("Mysh").onmouseover = () => {
+            document.getElementById("Mysh").style.backgroundColor = "Lightgrey"
+        }
+        document.getElementById("Mysh").onmouseout = () => {
+            document.getElementById("Mysh").style.backgroundColor = "aquamarine"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show and hide HTML elements using javascript</title>
+</head>
+<body>
+    <style>
+        img{
+            height: 200px;
+            width: 200px;
+            display:none;
+        }
+    </style>
+    <img src="b.jpg" id="img">
+    <button id="mybut">Hide image</button>
+
+    <script>
+ let button = document.getElementById("mybut");
+ let img = document.getElementById("img");
+  button.addEventListener("click", changeDisplay);
+  
+  
+  function changeDisplay(){
+   if(img.style.display == "none"){
+     img.style.display = "block"
+     button.textContent = "hide image"
+   }
+   else{
+    img.style.display = "none"
+    button.textContent = "Show image."
+   }
+   
+  }
+ 
+  
+    </script>
+</body>
+</html>

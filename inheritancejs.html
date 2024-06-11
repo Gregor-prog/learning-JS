@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script inheritance</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+        // inheritance = a child class can inherit all the methods and properties from another class
+        // if you have multiple classes with the same properties and methods, like they have some properties and method to be coommon
+        // you can cide those methods and properties in a parent class and other children classes will have access to it
+        // An exampleis the animal class, because animals have a commmon property and method, an example will be given below.
+  
+        // Lets first create the animal class, which will contain all they have in common
+
+     class animal{
+          ggg = 5
+          
+         Eat(){
+           console.log(`The ${this.name} is eating`)
+         }
+          Sleep(){
+           console.log( `The ${this.name} is sleeping`)
+          }
+        }
+
+        // we now create a children class that have access to these properties and methods
+        // as if they are written in the class itself
+        // "extends parentclass" where "parentclass is name of the parent", is used to inherit those properties
+        // and methods in the parent class
+        // note: in order for a method to be executed, an object must be created  from the class first.
+
+        class Rabbit extends animal{
+            name = "Rabit";
+            run(){
+                console.log(`The ${this.name} is running`)
+            }
+        }
+        class goldFish extends animal{
+            name = "goldfish"
+            swim(){
+                console.log(`The ${this.name} is running`)
+            }
+        }
+        class Eagle extends animal{
+            name = "Eagle"
+            fly(){
+                console.log(`The ${this.name} is running`)
+            }
+        }
+        console.log(Rabbit.name)
+        let run = new Rabbit
+        run.Sleep()
+        // note, never forget man: an object must created from the class before trying to execute the code.
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // class = a blueprint for creating objects
+//         defines what properties and methods they have
+//         use a constructor for unique properties
+
+// in a class with a given set of instructions,  multiple objects can be created, e.g
+
+class player{
+ Score = 15;
+
+Start(){
+    console.log("You've stsrted the game, click any button to continue")
+}
+exit(){
+    console.log("Are you sure you wanna exit this game?")
+}
+}
+// Now you can create one or more object with it
+// lets say we have 2 players
+
+ let player1 = new player();
+ let player2 = new player();
+ // now you can set any property or method for each of the player
+ 
+ player1.Score += 1;
+ player2.Score += 2;
+
+ console.log(`Your score is ${player1.Score}, While your friend score is ${player2.Score}`)
+ 
+    </script>
+</body>
+</html>

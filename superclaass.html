@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+// super = refers to the parent class.
+//    it is basically used to invoke the constructor of a parent class
+//     if you try to execute a code using inheritance from a parentt  class, it wont work unless you use the super method
+
+
+class Animal{
+      constructor(Name){
+        this.Name = Name
+        
+      }
+}
+class Rabbit extends Animal{
+
+    constructor(Name, Age , runspeed){
+        super(Name)
+        this.Age = Age;
+        this.runspeed =  runspeed
+    }
+}
+class Eagle extends Animal{
+    constructor(Name, Age , flyspeed){
+        super(Name)
+        this.Age = Age;
+        this.runspeed =  flyspeed
+    }
+}
+class Fish extends Animal{
+    constructor(Name, Age , swimspeed){
+        super(Name)
+        this.Age = Age;
+        this.runspeed =  swimspeed
+    }
+}
+let eagle1 = new Eagle("firstEag", 2,"70km/hr")
+console.log(eagle1.Name)
+</script>
+</body>
+</html>

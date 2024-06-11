@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #text{
+            font-size: 30px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+        button{
+            color: red;
+            border-radius: 6px;
+            padding:6px;
+            border :5px solid white;
+        }
+
+    </style>
+    
+<label id="text">0</label><br>
+<button id="incbutton">Increase</button>
+<button id="decbutton">Decrease</button>
+
+    <script>
+        // function expression = function without a name(anonymous function)
+        // avoid pollutiong the global scope with names to write it, then forget about it
+        // It is basically writing a function without a name caused it is gonna be used once.
+          
+        let count = 0;
+        document.getElementById("incbutton").onclick = function(){
+            count += 1
+            document.getElementById("text").innerHTML = count
+        }
+
+        document.getElementById("decbutton").onclick = function(){
+            count -= 1
+            document.getElementById("text").innerHTML = count
+        }
+
+    </script>
+</body>
+</html>

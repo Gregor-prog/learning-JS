@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set timeout function
+    </title>
+</head>
+<body>
+    <p id="textElement"></p>
+<button id="setTimeoutbut"> Click here to run that code</button>
+    <script>
+// setTimeout() =invokes a function after a number of milliseconds
+//               it is an asynchronous function( doesn't pause execution)
+
+document.getElementById("setTimeoutbut").onclick = function(){
+    setTimeout(firstMessage, 5000)
+setTimeout(secondMessage, 10000)
+setTimeout(thirdMessage, 15000)
+}
+
+function firstMessage(){
+   document.getElementById("textElement").innerHTML = "How are you doing today? Do you mind buying this course?"
+}
+function secondMessage(){
+    document.getElementById("textElement").innerHTML ="click on this button to buy this course!"
+}
+function thirdMessage(){
+    document.getElementById("textElement").innerHTML = "Buy it now" 
+}
+    </script>
+</body>
+</html>

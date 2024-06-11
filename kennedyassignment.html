@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennedyassignment</title>
+</head>
+<body>
+    
+
+    <script>
+
+        class students{
+
+            constructor(name, age, gpa){
+            this.name =  name;
+            this.age = age;
+            this.gpa = gpa
+            }
+        }
+
+        student1 = new students("Emily", 18, 3.7)
+        student2 = new students("tyler", 17, 3.4)
+        student3 = new students("sophia", 16, 3.9)
+        student4 = new students("Ethan", 18, 3.6)
+        student5 = new students("jones", 17, 3.8)
+        student6 = new students("niah", 18, 3.5)
+        student7 = new students("ava", 17, 3.7)
+        student8 = new students("lucas", 19, 3.6)
+        student9 = new students("isabella", 16, 3.9)
+        student10= new students("mason", 18, 3.7)
+        student11= new students("mia", 17, 3.8)
+        student12= new students("aiden", 17, 3.9)
+        student13= new students("harper", 20, 3.6)
+        student14= new students("elijah", 18, 3.5)
+        student15= new students("charlotte", 17, 3.9)
+        student16= new students("Benjamin", 16, 3.7)
+        student17= new students("amelia", 19, 3.8)
+        student18= new students("logan", 18, 3.5)
+        student19= new students("Grace", 16, 3.0)
+        student20= new students("jacob", 17, 3.9)
+
+        let arrayOfStudents = []
+        arrayOfStudents.push(student1)
+        arrayOfStudents.push(student2)
+        arrayOfStudents.push(student3)
+        arrayOfStudents.push(student4)
+        arrayOfStudents.push(student5)
+        arrayOfStudents.push(student6)
+        arrayOfStudents.push(student7)
+        arrayOfStudents.push(student8)
+        arrayOfStudents.push(student9)
+        arrayOfStudents.push(student10)
+        arrayOfStudents.push(student11)
+        arrayOfStudents.push(student12)
+        arrayOfStudents.push(student13)
+        arrayOfStudents.push(student14)
+        arrayOfStudents.push(student15)
+        arrayOfStudents.push(student16)
+        arrayOfStudents.push(student17)
+        arrayOfStudents.push(student18)
+        arrayOfStudents.push(student19)
+        arrayOfStudents.push(student20)
+        console.log(arrayOfStudents);
+
+        setTimeout(
+        () => {console.log("DO this first");
+              setTimeout( () => {console.log("Then do this."); 
+                        setTimeout( () => {console.log("Then finally, display this");}, 2000)
+                           }
+            , 2000)
+        }
+        , 2000)
+
+        
+    </script>
+</body>
+</html>

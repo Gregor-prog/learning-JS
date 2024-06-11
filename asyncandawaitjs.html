@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // async/await = async = makes a function return a Promise
+        //               await = makes a function wait for a Promise
+
+        //               it allows you to write asyncronous code in a syncrounous manner
+        //               async doesnt allow you to resolve or reject parameters
+        //               everything after await is placedin an event queue
+
+        //               so basically, async and await help us make our code clean and neat us doesntrequire the 
+        //               use of complex then() 
+     function task1(){
+        return new Promise(
+            (resolve, reject) => { setTimeout(() => {console.log( "you just finished the first task"
+            ); resolve("First task done")}, 2000)}
+        )
+     }
+     function task2(){
+        return new Promise(
+            (resolve, reject) => {
+                setTimeout( ()=> { 
+                    let done =  true;
+                    if (done){resolve("task was done successfully")}
+                    else{reject("Unfortunately, something went wrong")}
+                }, 1500)
+            }
+        )
+     }
+
+     function task3(){
+        return new Promise(
+            (resolve, reject) => { console.log("this is my task") ; resolve("Task done successfuly")}
+        )
+     }
+     
+     async function  doAllTasks(){
+         const firstTask = await task1()// Waits for the promis in task one to  execute before running other codes
+         console.log(firstTask);
+         const secondTask = await task2()
+         console.log(secondTask);
+         const thirdTask = await task3()
+         console.log(thirdTask);
+         console.log("you've completed all your tasks");
+     }
+  doAllTasks()
+
+
+
+    
+    </script>
+
+
+</body>
+</html>

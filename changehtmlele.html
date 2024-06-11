@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to add or change HTML elements in js</title>
+</head>
+<body>
+    <ul id="appliances">
+        <li>Tv</li>
+        <li>fan</li>
+        <li>blender</li>
+    </ul>
+    
+    <script>
+
+        //add/change HTML elements.
+        // use the createElement() to create HTML element
+        // use the append() to add it to wherever
+
+        let newEle = document.createElement("h1")
+         newEle.textContent = "I am Emmanuel"
+         document.body.append(newEle)
+        // let's add a list item to a list
+        let newList = document.createElement("li")
+        newList.textContent = window.prompt("WHat do you wanna add to your list?")
+        document.getElementById("appliances").append(newList)
+     //   if you wanna add an element to the beginning of your list, you can use prepend()
+     document.getElementById("appliances").prepend(".burger")
+    </script>
+</body>
+</html>

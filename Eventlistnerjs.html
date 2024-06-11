@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add event listner javascript</title>
+</head>
+<body>
+    <style>
+        #div{
+            background-color: chocolate;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <div id="div"></div>
+
+    <script>
+        // .addEventListner(event, function, useCapture)
+        // you can add many events handlers to one element.
+        // Even the same event that invokes different fucntions
+        let element = document.getElementById("div");
+        element.addEventListener("mouseover", dosomething)
+        element.addEventListener("mouseout", doanotherthing)
+        function dosomething(){
+            element.style.backgroundColor = "green"
+        }
+        function doanotherthing(){
+            element.style.backgroundColor= "chocolate"
+        }
+
+    </script>
+</body>
+</html>

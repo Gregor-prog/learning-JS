@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects to a funtion as an argument</title>
+</head>
+<body>
+    
+
+    <script>
+// so basically we are passing objects as an argument to a fuction
+
+class car{
+
+    constructor ( model, year, color){
+        this.model = model;
+        this.year = year;
+        this.color = color
+    }
+}
+let car1 = new car("mustang", 2015 , "Red")
+let car2 = new car("Lamborghini", 2021, "Black")
+let car3 = new car("Bughatti", 2019 , "Blue")
+// So basically, it is just the same way that you put arguments in funtions
+changeColor(car1) 
+  displayInfo(car1)
+
+  function displayInfo(car){
+console.log(car.model)
+console.log(car.year)
+console.log(car.color)
+  }
+
+  //let us write a funtion that will change the color of the car
+ 
+  function changeColor(car){
+    car.color = "black"
+   
+  }
+    </script>
+</body>
+</html>

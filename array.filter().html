@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let age = [ 18, 17, 21, 22, 17 , 19, 20]
+        Adult = age.filter(checkAge)
+        
+        Adult.forEach(print)
+        function checkAge( element, index, array){
+            return element >= 18
+        }
+
+        function print(element){
+            console.log(element)
+        }
+          </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">Click here to start counting</button>
+<h2 id="text"></h2>
+
+    <script>
+//  setInterval() = invokes a function repeatedly after a number a miliseconds
+// it is an asynchronus function( it doesnt pause the execution of your program)
+// An example will be a count function
+
+ let maximum = window.prompt("Which number do you wanna count up to?")
+ maximum = Number(maximum)
+ let i = 0;
+ let timer; 
+ // note: always declare your varaible outside your function to make it global
+
+ document.getElemexntById("button").onclick = function(){
+  timer = setInterval(Count, 1000)
+     
+ }
+function Count(){
+   i += 1;
+    document.getElementById("text").innerHTML = i
+     
+    if( i == maximum){
+   clearInterval(timer)
+     }
+ 
+
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop-watch javascript</title>
+</head>
+<body>
+<style>
+    body{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #container{
+        height: 200px;
+        width: 500px;
+        border-radius: 12px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #date{
+        
+        color: lightgreen;
+        font-size: 40px;
+        font-family: sans-serif;
+    }
+    #buttons{
+        /* margin-top: 20px; */
+        height: 70px;
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    button{
+        background-color: rgb(44, 43, 43);
+        border: 1px solid white;
+        color: white;
+        border-radius: 12px;
+        width: 130px;
+        height: 40px;
+        font-size: 25px;
+
+    }
+    #record{
+        margin-top: -20px;
+        
+    }
+#text{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: grey;
+    width: 75px;
+}
+</style>
+      
+    <div id="container">
+        <h1 id="date">shit</h1>
+            <div id="buttons">
+                <button id="startbut">start</button>
+                <button id="pausebut">stop</button>
+                <button id="resetbut">reset</button>
+            </div>
+    </div>
+    <button id="record">Record</button>
+    <p id="text"> </p>
+    <script>
+       
+       
+        let date2 = document.querySelector("#date");
+        date2.textContent = "00:00:00"
+
+        
+        
+        let date = new Date
+       date.setHours(0)
+       date.setSeconds(0)
+       date.setMinutes(0)
+
+
+
+       let realTIme = Date.now()
+         let timeCount = 0;
+         let elaspedTime = 0;
+         let interval1;
+         let secs = 0;
+         let mins = 0;
+         let hours = 0;
+         let timeCount2 = 0;
+         let interval2;
+         let sec = 0;
+         let min = 0;
+         let hour;
+
+
+
+        document.querySelector("#startbut").addEventListener("click",() => {
+            clearInterval(interval2)
+            
+           interval1 = setInterval(
+           () => {
+            timeCount = (Date.now() - realTIme) 
+           
+            
+            
+            secs = Math.floor(timeCount/1000) - timeCount2 - 2
+            mins = Math.floor(secs/60)
+            hours = Math.floor(mins/60)
+            date.setSeconds(secs)
+            date.setMinutes(mins)
+            date.setHours(hours)
+           sec =  date.getSeconds(secs)
+            min =  date.getMinutes(mins)
+           hour =  date.getHours(hours)
+           hour =  String(hour)
+           min = min.toString()
+           sec = sec.toString()
+           if(sec.length == 1){
+                sec ="0" + sec
+            }
+            else{}
+            if(min.length == 1){
+                min ="0" + min
+            }
+            else{} 
+            if(hour.length == 1){
+                hour = "0" + hour
+            }
+
+
+            date2.textContent = `${hour}:${min}:${sec}`
+
+            
+           } 
+           , 100)
+
+        })
+               
+        document.querySelector("#pausebut").addEventListener("click",() => {
+               
+                 clearInterval(interval1)
+                 
+                
+                interval2 = setInterval(() => {
+                   
+                   timeCount2 += 1
+                    
+                 },1000)
+
+        })
+        
+     
+                
+          document.querySelector("#resetbut").addEventListener("click", () => {
+            clearInterval(interval1)
+            clearInterval(interval2)
+            timeCount = 0;
+            realTIme = Date.now()
+             elaspedTime = 0;
+          interval1;
+         secs = 0;
+          mins = 0;
+          hours = 0;
+          timeCount2 = 0;
+          interval2;
+          sec = 0;
+          min = 0;
+          hour = 0;
+          date2.textContent = "00:00:00"
+          })  
+ let newEle = document.createElement("br")
+document.getElementById("record").onclick = function(){
+    document.getElementById("text").textContent = date2.textContent
+}
+
+
+
+
+
+
+       
+       
+        
+        
+
+    </script>
+</body>
+</html>

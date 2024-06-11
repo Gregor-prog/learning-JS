@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // Walk the dog
+        // clean the kitchen
+        // take out the trash
+
+        // function walkDog(){
+        //     console.log("i just walked the dog");
+        //     setTimeout(cleanKitchen, 5000)
+        // }
+        // function cleanKitchen(){
+        //     console.log("just cleaned the kitchen");
+        //     setTimeout(takeOutTrash, 1000)  
+        // }
+        // function takeOutTrash(){
+        //     console.log("Just took out the trash");
+        // }
+        // setTimeout(walkDog, 10000)
+
+        // Promise =  An Object that manages asynchronous operations.
+        //            Wrap a promsie object around {asychronous code}
+        //            " I promise to return a value"
+        //            PENDING -> RESOLVED or REJECTTED
+        //            new promise((resolve, reject) => {asynchronous codep}) 
+        // let's do the following taska;
+        // WALK THE DOG
+        // CLEAN THE KITCHEN
+        // TAKE OUT THE TRASH
+        // but with only promises
+
+        function walkDog(){
+            return new Promise( (resolve, reject) => {
+                setTimeout(() => {
+                    const walkDog =true;
+                    if(walkDog){ resolve("you have walked the dog")}
+                    else{reject("you failed fam")}
+                }, 10000)
+            })
+        }
+        function cleanKitchen(){
+
+            return new Promise( (resolve, reject) => {
+             const cleanKitchen = true;
+                setTimeout( () => {if(cleanKitchen){resolve("you successfully cleaned the kitchen");}
+                else{reject("You failed a simple taskof cleaning the kithchen, failure.")}
+                },5000)
+            } )
+        }
+        function takeOutTrash(){
+
+            return new Promise( (resolve, reject) => {
+                setTimeout(() => {
+                    const takeTrash = false;
+                    if(takeTrash){ resolve("you have taken out the trash")}
+                    else{reject("You have nottaken out any trash yet")}
+                }, 1000)     })
+        }
+       
+        walkDog().then( value => {console.log(value); return cleanKitchen()})
+        .then( value => {console.log(value); return takeOutTrash()})
+        .then( value => {console.log(value); console.log("You've completed all the fucking tasks");})
+        .catch( error => {console.error(error)})
+        
+    </script>
+</body>
+</html>

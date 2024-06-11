@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas textt</title>
+</head>
+<body>
+    <style>
+        #canshit{
+            border: 2px solid red;
+            
+        }
+    </style>
+    <canvas id="canshit" width="500px" height="500px" ></canvas>
+    <script>
+        let canvas = document.querySelector("#canshit");
+        let context = canvas.getContext("2d");
+
+
+        context.font = "20px Courier New" 
+        context.fillStyle = "yellow"
+        context.textAlign = "center"
+        context.fillText("I AM HIM",canvas.width/2,canvas.height/2)
+    </script>
+</body>
+</html>

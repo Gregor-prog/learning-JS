@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Css properties</title>
+</head>
+<body>
+    <h1 id="myHeader"> This is my title</h1>
+
+    <script>
+        // in order to change CSS properties, yo need to select the element
+
+        let title = document.getElementById("myHeader");
+        // we'll use the style attribute to access the style then a CSS property
+        title.style.backgroundColor = "lightgreen"
+        // when accessing a style in JS, it is usually in camelCase
+        //change font
+        title.style.fontFamily = "consolas"
+        title.style.color ="rgb(200,90,200)"
+        title.style.textAlign = "center"
+        title.style.border = "5px solid yellow"
+        title.style.width = "200px"
+        title.style.height = "200px"
+        // you can access and change any Css style of an Element
+    </script>
+</body>
+</html>

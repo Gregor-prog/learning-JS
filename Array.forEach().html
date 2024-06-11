@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p id="ptag"></p>
+    <script>
+
+        let letters = ['a', 'b', 'b', 'a','a', 'b','a']
+
+        let counta = 0;
+        let countb = 0;
+        letters.forEach(keepCount)
+        function keepCount(item, index, array){
+           if(item == 'a'){
+            counta += 1 
+           }
+           else{}
+
+           if(item == 'b'){
+           countb += 1
+           }
+           else{}
+        }
+        console.log(counta)
+        console.log(countb)
+   
+        let students = ["emmanuel", "joshua", "divine", "advance", "david", "praise"]
+        students.forEach(gg)
+        function gg(item, index , array){
+           console.log(item[0].toUpperCase() + item.substring(1))
+        }
+        
+       
+
+       
+        
+    </script>
+</body>
+</html>
